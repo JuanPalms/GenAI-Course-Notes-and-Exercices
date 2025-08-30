@@ -1,0 +1,15 @@
+project:
+  type: book
+
+book:
+  title: "Intro a la GenAI en AWS"
+  author: "Juan Palmeros"
+  chapters:
+    - index.qmd
+
+format:
+  html:
+    theme: cosmo
+
+execute:
+  freeze: auto

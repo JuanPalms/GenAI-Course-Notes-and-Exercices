@@ -1,0 +1,58 @@
+
+* Introducir al alumno a tecnologías que se utilizan en la industria para 
+construir productos que se basan en el uso de inteligencia artificial generativa en la nube de AWS*.
+
+## Objetivos Específicos {-}
+
+* Introducir los conceptos básicos para la arquitectura, computo, 
+almacenamiento y despliegue de soluciones de inteligencia artificial generativa.
+* Desarrollar experiencia práctica con herramientas de aplicacion de inteligencia artificial en AWS.
+* Habilitar al alumno para que pueda desarrollar un producto basico de inteligencia artificial y comenzar a desarollar su portafolio de genAI.
+
+## Temario {-}
+
+1. Teoria y conceptos basicos de redes neuronales.
+2. Teoria y conceptos basicos de inteligencia artificial generativa
+3. Scripting avanzado (codigo limpio)
+4. Creación y estandarización de ambientes de desarrollo
+5. Introduccion a servicios de AWS: Bedrock, Lambda, RDS, S3 y SageMaker
+6. Proyecto 1: Extraccion de datos de archivos con modelo fundacional.
+7. Proyecto 2: Clasificacion de sentimiento usando modelo fundacional.
+8. Proyecto3: Proceso de pregunta y respuesta usando RAG
+9. Limpieza de ambiente y revision de cuentas
+
+
+## Pre-requisitos {-}
+
+**Esta materia no es un curso de programación, parte de la suposición de que el 
+alumno es capaz de programar en python. Las implementaciones que se verán en la clase son avanzadas y se espera que el alumno invierta tiempo estudiando documentación y debuggeando código por su propia cuenta.
+
+* Programación en Python o R.
+* Machine learning
+* SQL
+* Git
+* Shell
+
+## Material {-}
+
+## Referencias principales {-}
+
+En particular este curso no sigue una referencia en particular y está 
+inspirado en whitepapers, buenas prácticas, documentación y tutoriales.
+
+- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+- [Machine Learning Lens](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html)
+- [Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines](https://www.amazon.com/Data-Science-AWS-End-End/dp/1492079391)
+- [Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications](https://www.amazon.com/-/es/Chip-Huyen/dp/1098107969/ref=sr_1_1?keywords=designing+machine+learning+systems&qid=1671403603&s=books&sprefix=designing+machinbe+le%2Cstripbooks-intl-ship%2C172&sr=1-1)
+
+## Amazon Web Services (AWS) {-}
+
+* En este curso trabajaremos en la nube de AWS, para lo cual es necesario que 
+abras una cuenta. En la medida de lo posible trabajermos con el Free Tier.
+
+
+## Software {-}
+
+Durante el curso utilizaremos Python. Durante la primera sesion dedicaremos una parte del tiempo a configurar un ambiente de trabajo, es tarea de la primera sesion el resolver el ambiente de trabajo y llegar a la segunda sesion con jupyter lab o visual studio code instalados en tu computadora. 
+La sesion se imparte en un sistema operativo Linux, para los usuarios de windows asegurarse de llegar a la segunda sesion con la instalacion adecuada de Visual Studio Code y con la herramienta de WSL configurada para poder usar los comandos de terminal que se veran en el curso.  
+
