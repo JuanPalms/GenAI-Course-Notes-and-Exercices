@@ -6,6 +6,8 @@ book:
   author: "Juan Palmeros"
   chapters:
     - index.qmd
+    - 01-Teoria-y-conceptos-basicos-de-redes-neuronales.qmd
+    - 02-Teoria-y-conceptos-basicos-de-inteligencia-artificial-generativa.qmd
 
 format:
   html:

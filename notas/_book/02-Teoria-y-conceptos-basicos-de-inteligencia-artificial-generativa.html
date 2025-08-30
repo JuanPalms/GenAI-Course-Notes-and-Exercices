@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan Palmeros">
 
-<title>Intro a la GenAI en AWS</title>
+<title>Intro a la GenAI en AWS - Teoria y conceptos basicos de inteligencia artificial generativa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" rel="next">
+<link href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Objetivos Específicos</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-Teoria-y-conceptos-basicos-de-inteligencia-artificial-generativa.html">Teoria y conceptos basicos de inteligencia artificial generativa</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Objetivos Específicos</span></a>
   </div>
 </li>
@@ -112,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-Teoria-y-conceptos-basicos-de-inteligencia-artificial-generativa.html" class="sidebar-item-text sidebar-link">
+  <a href="./02-Teoria-y-conceptos-basicos-de-inteligencia-artificial-generativa.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Teoria y conceptos basicos de inteligencia artificial generativa</span></a>
   </div>
 </li>
@@ -126,13 +125,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link active" data-scroll-target="#objetivos-específicos">Objetivos Específicos</a></li>
-  <li><a href="#temario" id="toc-temario" class="nav-link" data-scroll-target="#temario">Temario</a></li>
-  <li><a href="#pre-requisitos" id="toc-pre-requisitos" class="nav-link" data-scroll-target="#pre-requisitos">Pre-requisitos</a></li>
-  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
-  <li><a href="#referencias-principales" id="toc-referencias-principales" class="nav-link" data-scroll-target="#referencias-principales">Referencias principales</a></li>
-  <li><a href="#amazon-web-services-aws" id="toc-amazon-web-services-aws" class="nav-link" data-scroll-target="#amazon-web-services-aws">Amazon Web Services (AWS)</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link active" data-scroll-target="#ejemplo">Ejemplo</a></li>
+  <li><a href="#nota" id="toc-nota" class="nav-link" data-scroll-target="#nota">Nota:</a></li>
+  <li><a href="#arquitectura-de-transformers" id="toc-arquitectura-de-transformers" class="nav-link" data-scroll-target="#arquitectura-de-transformers">Arquitectura de transformers</a></li>
   </ul>
 </nav>
     </div>
@@ -141,19 +136,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Intro a la GenAI en AWS</h1>
+<h1 class="title">Teoria y conceptos basicos de inteligencia artificial generativa</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Juan Palmeros </p>
-          </div>
-  </div>
     
   
     
@@ -162,64 +151,69 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Las redes neuronales requieren un input para generar un output. Ese input debe tener un formato numerico para poder funcionar.</p>
 <ul>
-<li>Introducir al alumno a tecnologías que se utilizan en la industria para construir productos que se basan en el uso de inteligencia artificial generativa en la nube de AWS*.</li>
+<li>Como logramos representar palabras, imagenes o sonidos como numeros?</li>
 </ul>
-<section id="objetivos-específicos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos</h2>
+<p><img src="imagenes/vectores.png" class="img-fluid" style="width:100.0%"></p>
+<p>Usando una transformacion vectorial. La mas frecuente es la generacion de embeddings.</p>
+<p>Word Embedding es una técnica en el Procesamiento del Lenguaje Natural (NLP) que representa palabras como vectores numéricos en un espacio de alta dimensionalidad. En lugar de tratar las palabras como símbolos discretos (como lo haría un diccionario), Word Embedding captura las relaciones semánticas y sintácticas entre las palabras, permitiendo que las computadoras comprendan mejor el significado del lenguaje.</p>
 <ul>
-<li>Introducir los conceptos básicos para la arquitectura, computo, almacenamiento y despliegue de soluciones de inteligencia artificial generativa.</li>
-<li>Desarrollar experiencia práctica con herramientas de aplicacion de inteligencia artificial en AWS.</li>
-<li>Habilitar al alumno para que pueda desarrollar un producto basico de inteligencia artificial y comenzar a desarollar su portafolio de genAI.</li>
+<li>Como funciona?</li>
 </ul>
-</section>
-<section id="temario" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="temario">Temario</h2>
+<p>La idea principal es que las palabras que se usan en contextos similares tienden a tener significados similares. Word Embedding aprende estas relaciones observando grandes cantidades de texto y ajustando las posiciones de los vectores de las palabras en el espacio vectorial.</p>
+<ul>
+<li><p>Entrenamiento: Se entrena un modelo (por ejemplo, Word2Vec, GloVe, FastText) con un corpus de texto muy grande. El modelo analiza las palabras en su contexto (palabras vecinas) y ajusta los vectores de las palabras para que las palabras que aparecen en contextos similares estén más cerca en el espacio vectorial.</p></li>
+<li><p>Representación Vectorial: Cada palabra se convierte en un vector numérico de, por ejemplo, 100, 200 o 300 dimensiones. Cada dimensión representa una característica latente aprendida por el modelo.</p></li>
+<li><p>Relaciones Semánticas: Los vectores de palabras similares están cerca en el espacio vectorial. Esto permite realizar operaciones matemáticas para encontrar relaciones entre palabras.</p></li>
+</ul>
+<section id="ejemplo" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo">Ejemplo</h3>
+<p>Imagina que tienes un corpus de texto pequeño con las siguientes frases:</p>
 <ol type="1">
-<li>Teoria y conceptos basicos de redes neuronales.</li>
-<li>Teoria y conceptos basicos de inteligencia artificial generativa</li>
-<li>Scripting avanzado (codigo limpio)</li>
-<li>Creación y estandarización de ambientes de desarrollo</li>
-<li>Introduccion a servicios de AWS: Bedrock, Lambda, RDS, S3 y SageMaker</li>
-<li>Proyecto 1: Extraccion de datos de archivos con modelo fundacional.</li>
-<li>Proyecto 2: Clasificacion de sentimiento usando modelo fundacional.</li>
-<li>Proyecto3: Proceso de pregunta y respuesta usando RAG</li>
-<li>Limpieza de ambiente y revision de cuentas</li>
+<li>El gato está durmiendo en la alfombra.</li>
+<li>El perro está jugando en el jardín.</li>
+<li>Los gatos les gusta la leche.</li>
+<li>Los perros son leales.</li>
 </ol>
+<p>Después de entrenar un modelo de Word Embedding (en realidad, necesitarías muchísimos más datos, pero esto es solo un ejemplo), podríamos obtener los siguientes vectores simplificados para algunas palabras (en un espacio de 2 dimensiones para facilitar la visualización):</p>
+<ol type="1">
+<li>gato: [0.8, 0.2]</li>
+<li>perro: [0.7, 0.3]</li>
+<li>durmiendo: [0.1, 0.9]</li>
+<li>jugando: [0.2, 0.8]</li>
+</ol>
+<p>¿Qué podemos observar?</p>
+<p>Los vectores de “gato” y “perro” son relativamente cercanos, lo que refleja que son ambos animales domésticos.</p>
+<p>Los vectores de “durmiendo” y “jugando” también son cercanos, ya que ambos son acciones.</p>
 </section>
-<section id="pre-requisitos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="pre-requisitos">Pre-requisitos</h2>
-<p>**Esta materia no es un curso de programación, parte de la suposición de que el alumno es capaz de programar en python. Las implementaciones que se verán en la clase son avanzadas y se espera que el alumno invierta tiempo estudiando documentación y debuggeando código por su propia cuenta.</p>
-<ul>
-<li>Programación en Python o R.</li>
-<li>Machine learning</li>
-<li>SQL</li>
-<li>Git</li>
-<li>Shell</li>
-</ul>
+<section id="nota" class="level3">
+<h3 class="anchored" data-anchor-id="nota">Nota:</h3>
+<p>Cuales son los elementos basicos necesarios para entrenar un modelo?</p>
+<p><img src="imagenes/gradient.gif" class="img-fluid" style="width:100.0%"></p>
+<p><img src="imagenes/gradient_descent.png" class="img-fluid" style="width:100.0%"></p>
 </section>
-<section id="material" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="material">Material</h2>
-</section>
-<section id="referencias-principales" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="referencias-principales">Referencias principales</h2>
-<p>En particular este curso no sigue una referencia en particular y está inspirado en whitepapers, buenas prácticas, documentación y tutoriales.</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">AWS Well-Architected Framework</a></li>
-<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">Machine Learning Lens</a></li>
-<li><a href="https://www.amazon.com/Data-Science-AWS-End-End/dp/1492079391">Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines</a></li>
-<li><a href="https://www.amazon.com/-/es/Chip-Huyen/dp/1098107969/ref=sr_1_1?keywords=designing+machine+learning+systems&amp;qid=1671403603&amp;s=books&amp;sprefix=designing+machinbe+le%2Cstripbooks-intl-ship%2C172&amp;sr=1-1">Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications</a></li>
-</ul>
-</section>
-<section id="amazon-web-services-aws" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="amazon-web-services-aws">Amazon Web Services (AWS)</h2>
-<ul>
-<li>En este curso trabajaremos en la nube de AWS, para lo cual es necesario que abras una cuenta. En la medida de lo posible trabajermos con el Free Tier.</li>
-</ul>
-</section>
-<section id="software" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="software">Software</h2>
-<p>Durante el curso utilizaremos Python. Durante la primera sesion dedicaremos una parte del tiempo a configurar un ambiente de trabajo, es tarea de la primera sesion el resolver el ambiente de trabajo y llegar a la segunda sesion con jupyter lab o visual studio code instalados en tu computadora. La sesion se imparte en un sistema operativo Linux, para los usuarios de windows asegurarse de llegar a la segunda sesion con la instalacion adecuada de Visual Studio Code y con la herramienta de WSL configurada para poder usar los comandos de terminal que se veran en el curso.</p>
+<section id="arquitectura-de-transformers" class="level3">
+<h3 class="anchored" data-anchor-id="arquitectura-de-transformers">Arquitectura de transformers</h3>
+<p>Los Transformers son una arquitectura de red neuronal que se basa en el mecanismo de “atención” para ponderar la importancia de diferentes partes de la entrada al procesar secuencias de datos, como texto. A diferencia de las redes neuronales recurrentes (RNNs) que procesan la secuencia palabra por palabra, los Transformers procesan toda la secuencia en paralelo, lo que permite un entrenamiento más rápido y un mejor manejo de las dependencias a largo plazo.</p>
+<p>Componentes Clave de la Arquitectura Transformer:</p>
+<p>La arquitectura Transformer se compone principalmente de dos bloques: el Encoder (Codificador) y el Decoder (Decodificador).</p>
+<ol type="1">
+<li>Encoder (Codificador):</li>
+</ol>
+<p>Función:</p>
+<p>El Encoder se encarga de procesar la secuencia de entrada y generar una representación contextualizada de cada palabra en la secuencia.</p>
+<p>Output del Encoder: El Encoder produce una secuencia de vectores contextualizados, donde cada vector representa una palabra de la secuencia de entrada teniendo en cuenta su contexto en toda la frase.</p>
+<ol start="2" type="1">
+<li>Decoder (Decodificador):</li>
+</ol>
+<p>Función: El Decoder se encarga de generar la secuencia de salida, utilizando la representación contextualizada de la entrada proporcionada por el Encoder.</p>
+<p>Linear y Softmax: La salida de la última capa del Decoder se pasa a través de una capa lineal y una función softmax para producir una distribución de probabilidad sobre el vocabulario. La palabra con la mayor probabilidad se selecciona como la siguiente palabra en la secuencia de salida.</p>
+<ol start="3" type="1">
+<li>Mecanismo de Atención (Attention):</li>
+</ol>
+<p>Clave del Transformer: El mecanismo de atención permite al modelo ponderar la importancia de diferentes partes de la entrada al procesar una secuencia. Funcionamiento: El mecanismo de atención calcula una puntuación de “atención” para cada par de palabras en la secuencia de entrada (o entre la secuencia de entrada y la secuencia de salida en el caso del Decoder). Estas puntuaciones se utilizan para ponderar los vectores de las palabras, dando más peso a las palabras más relevantes. Multi-Head Attention: En lugar de utilizar un solo mecanismo de atención, los Transformers utilizan múltiples “cabezas” de atención en paralelo. Cada cabeza aprende diferentes patrones de relaciones entre las palabras, lo que permite al modelo capturar una gama más amplia de dependencias.</p>
+<p><strong>1) Representacion vectorial del input</strong> <strong>2) Representacion vectorial de la importancia relativa de las palabras y el contexto</strong> <strong>3) Proceso de entrenamiento para aprender 1 y 2</strong> <strong>4) Prediccion de la siguiente palabra mas probable</strong></p>
 
 
 </section>
@@ -460,11 +454,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Teoria y conceptos basicos de redes neuronales</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" class="pagination-link">
-        <span class="nav-page-text">Teoria y conceptos basicos de redes neuronales</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -1,0 +1,42 @@
+# Teoria y conceptos basicos de redes neuronales {-}
+
+1) Inteligencia artificial: Ciencia de hacer que las maquinas imiten el comportamiento y toma de decisiones humanos
+2) Machine Learning: Rama de la inteligencia artificial que se enfoca en el uso de datosy algoritmos para imitar el comportamiento humano
+3) Deep Learning: Rama del machine learning que usa redes neuronales para realizar tareas con asistencia humana limitada
+4) Inteligencia artificial generativa: Subrama de deep learning que puede generar texto, imagenes, videos y sonido. 
+
+![](imagenes/genai_context.png){width=100%}
+
+### Ejemplos comunes de inteligencia artificial
+
+- Automoviles autonomos: toman decisiones en tiempo real basados en datos de sensores.
+- Sistemas de recomendaciones: Netflix-Amazon usan datos de usuarios para generar recomendaciones personalizadas.
+
+## Machine Learning {-}
+
+Rama de la inteligencia artifical en la cual los algoritmos son entrenados usando datos historicos para generar predicciones sobre nuevos datos.
+
+- Supervisado (ejemplos?)
+- No supervisado (ejemplos?)
+- Reinforcement Learning
+
+## Deep Learning y Redes Neuronales {-}
+
+Las redes neuronales artificiales tienen como concepto imitar el funcionamiento del cerebro al "conectar" neuronas para generar pensamiento.
+
+Conceptos fundamentales:
+
+1) Neuronas: Cada neurona recibe múltiples entradas (pesoadas), realiza una operación matemática (generalmente suma ponderada) y pasa el resultado por una función de activación. La salida puede ser enviada a muchas otras neuronas.
+2) Capas de entrada: Reciben los datos iniciales, por ejemplo, palabras convertidas en vectores.
+3) Capas ocultas: Realizan cálculos internos y extraen características útiles de los datos.
+4) Capas de salida: Generan la predicción final, como la próxima palabra en un texto.
+5) Pesos: Son los parámetros ajustables que determinan cuánto influencia tiene cada entrada en la activación de una neurona. Inicialmente pueden ser aleatorios y luego ajustados durante el entrenamiento.
+6) Sesgos: Son valores adicionales que se añaden a la suma ponderada para desplazar la función de activación, ayudando a la red a aprender patrones más complejos.
+7) Funciones de activacion: Funciones que transforman los datos dentro de las capas de las redes neuronales. 
+	- ReLU (Rectified Linear Unit): f(x) = max(0, x). Es ampliamente utilizada por su simplicidad y eficiencia.
+	- Sigmoid: f(x) = 1 / (1 + e^(-x)). Produce valores entre 0 y 1, útil en tareas binarios.
+	- Tanh: f(x) = (e^x - e^(-x)) / (e^x + e^(-x)). Produce valores entre -1 y 1.
+
+![](imagenes/artificial_nn.png){width=100%}
+
+

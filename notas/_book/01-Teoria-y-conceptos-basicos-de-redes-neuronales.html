@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juan Palmeros">
 
-<title>Intro a la GenAI en AWS</title>
+<title>Intro a la GenAI en AWS - Teoria y conceptos basicos de redes neuronales</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" rel="next">
+<link href="./02-Teoria-y-conceptos-basicos-de-inteligencia-artificial-generativa.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Objetivos Específicos</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html">Teoria y conceptos basicos de redes neuronales</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,13 +100,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Objetivos Específicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" class="sidebar-item-text sidebar-link">
+  <a href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Teoria y conceptos basicos de redes neuronales</span></a>
   </div>
 </li>
@@ -126,13 +126,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link active" data-scroll-target="#objetivos-específicos">Objetivos Específicos</a></li>
-  <li><a href="#temario" id="toc-temario" class="nav-link" data-scroll-target="#temario">Temario</a></li>
-  <li><a href="#pre-requisitos" id="toc-pre-requisitos" class="nav-link" data-scroll-target="#pre-requisitos">Pre-requisitos</a></li>
-  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
-  <li><a href="#referencias-principales" id="toc-referencias-principales" class="nav-link" data-scroll-target="#referencias-principales">Referencias principales</a></li>
-  <li><a href="#amazon-web-services-aws" id="toc-amazon-web-services-aws" class="nav-link" data-scroll-target="#amazon-web-services-aws">Amazon Web Services (AWS)</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  <li><a href="#ejemplos-comunes-de-inteligencia-artificial" id="toc-ejemplos-comunes-de-inteligencia-artificial" class="nav-link active" data-scroll-target="#ejemplos-comunes-de-inteligencia-artificial">Ejemplos comunes de inteligencia artificial</a></li>
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine Learning</a></li>
+  <li><a href="#deep-learning-y-redes-neuronales" id="toc-deep-learning-y-redes-neuronales" class="nav-link" data-scroll-target="#deep-learning-y-redes-neuronales">Deep Learning y Redes Neuronales</a></li>
   </ul>
 </nav>
     </div>
@@ -141,19 +137,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Intro a la GenAI en AWS</h1>
+<h1 class="title">Teoria y conceptos basicos de redes neuronales</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Juan Palmeros </p>
-          </div>
-  </div>
     
   
     
@@ -162,64 +152,48 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ul>
-<li>Introducir al alumno a tecnologías que se utilizan en la industria para construir productos que se basan en el uso de inteligencia artificial generativa en la nube de AWS*.</li>
-</ul>
-<section id="objetivos-específicos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos</h2>
-<ul>
-<li>Introducir los conceptos básicos para la arquitectura, computo, almacenamiento y despliegue de soluciones de inteligencia artificial generativa.</li>
-<li>Desarrollar experiencia práctica con herramientas de aplicacion de inteligencia artificial en AWS.</li>
-<li>Habilitar al alumno para que pueda desarrollar un producto basico de inteligencia artificial y comenzar a desarollar su portafolio de genAI.</li>
-</ul>
-</section>
-<section id="temario" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="temario">Temario</h2>
 <ol type="1">
-<li>Teoria y conceptos basicos de redes neuronales.</li>
-<li>Teoria y conceptos basicos de inteligencia artificial generativa</li>
-<li>Scripting avanzado (codigo limpio)</li>
-<li>Creación y estandarización de ambientes de desarrollo</li>
-<li>Introduccion a servicios de AWS: Bedrock, Lambda, RDS, S3 y SageMaker</li>
-<li>Proyecto 1: Extraccion de datos de archivos con modelo fundacional.</li>
-<li>Proyecto 2: Clasificacion de sentimiento usando modelo fundacional.</li>
-<li>Proyecto3: Proceso de pregunta y respuesta usando RAG</li>
-<li>Limpieza de ambiente y revision de cuentas</li>
+<li>Inteligencia artificial: Ciencia de hacer que las maquinas imiten el comportamiento y toma de decisiones humanos</li>
+<li>Machine Learning: Rama de la inteligencia artificial que se enfoca en el uso de datosy algoritmos para imitar el comportamiento humano</li>
+<li>Deep Learning: Rama del machine learning que usa redes neuronales para realizar tareas con asistencia humana limitada</li>
+<li>Inteligencia artificial generativa: Subrama de deep learning que puede generar texto, imagenes, videos y sonido.</li>
 </ol>
-</section>
-<section id="pre-requisitos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="pre-requisitos">Pre-requisitos</h2>
-<p>**Esta materia no es un curso de programación, parte de la suposición de que el alumno es capaz de programar en python. Las implementaciones que se verán en la clase son avanzadas y se espera que el alumno invierta tiempo estudiando documentación y debuggeando código por su propia cuenta.</p>
+<p><img src="imagenes/genai_context.png" class="img-fluid" style="width:100.0%"></p>
+<section id="ejemplos-comunes-de-inteligencia-artificial" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplos-comunes-de-inteligencia-artificial">Ejemplos comunes de inteligencia artificial</h3>
 <ul>
-<li>Programación en Python o R.</li>
-<li>Machine learning</li>
-<li>SQL</li>
-<li>Git</li>
-<li>Shell</li>
+<li>Automoviles autonomos: toman decisiones en tiempo real basados en datos de sensores.</li>
+<li>Sistemas de recomendaciones: Netflix-Amazon usan datos de usuarios para generar recomendaciones personalizadas.</li>
 </ul>
 </section>
-<section id="material" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="material">Material</h2>
-</section>
-<section id="referencias-principales" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="referencias-principales">Referencias principales</h2>
-<p>En particular este curso no sigue una referencia en particular y está inspirado en whitepapers, buenas prácticas, documentación y tutoriales.</p>
+<section id="machine-learning" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="machine-learning">Machine Learning</h2>
+<p>Rama de la inteligencia artifical en la cual los algoritmos son entrenados usando datos historicos para generar predicciones sobre nuevos datos.</p>
 <ul>
-<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">AWS Well-Architected Framework</a></li>
-<li><a href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">Machine Learning Lens</a></li>
-<li><a href="https://www.amazon.com/Data-Science-AWS-End-End/dp/1492079391">Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines</a></li>
-<li><a href="https://www.amazon.com/-/es/Chip-Huyen/dp/1098107969/ref=sr_1_1?keywords=designing+machine+learning+systems&amp;qid=1671403603&amp;s=books&amp;sprefix=designing+machinbe+le%2Cstripbooks-intl-ship%2C172&amp;sr=1-1">Designing Machine Learning Systems: An Iterative Process for Production-Ready Applications</a></li>
+<li>Supervisado (ejemplos?)</li>
+<li>No supervisado (ejemplos?)</li>
+<li>Reinforcement Learning</li>
 </ul>
 </section>
-<section id="amazon-web-services-aws" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="amazon-web-services-aws">Amazon Web Services (AWS)</h2>
+<section id="deep-learning-y-redes-neuronales" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="deep-learning-y-redes-neuronales">Deep Learning y Redes Neuronales</h2>
+<p>Las redes neuronales artificiales tienen como concepto imitar el funcionamiento del cerebro al “conectar” neuronas para generar pensamiento.</p>
+<p>Conceptos fundamentales:</p>
+<ol type="1">
+<li>Neuronas: Cada neurona recibe múltiples entradas (pesoadas), realiza una operación matemática (generalmente suma ponderada) y pasa el resultado por una función de activación. La salida puede ser enviada a muchas otras neuronas.</li>
+<li>Capas de entrada: Reciben los datos iniciales, por ejemplo, palabras convertidas en vectores.</li>
+<li>Capas ocultas: Realizan cálculos internos y extraen características útiles de los datos.</li>
+<li>Capas de salida: Generan la predicción final, como la próxima palabra en un texto.</li>
+<li>Pesos: Son los parámetros ajustables que determinan cuánto influencia tiene cada entrada en la activación de una neurona. Inicialmente pueden ser aleatorios y luego ajustados durante el entrenamiento.</li>
+<li>Sesgos: Son valores adicionales que se añaden a la suma ponderada para desplazar la función de activación, ayudando a la red a aprender patrones más complejos.</li>
+<li>Funciones de activacion: Funciones que transforman los datos dentro de las capas de las redes neuronales.
 <ul>
-<li>En este curso trabajaremos en la nube de AWS, para lo cual es necesario que abras una cuenta. En la medida de lo posible trabajermos con el Free Tier.</li>
-</ul>
-</section>
-<section id="software" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="software">Software</h2>
-<p>Durante el curso utilizaremos Python. Durante la primera sesion dedicaremos una parte del tiempo a configurar un ambiente de trabajo, es tarea de la primera sesion el resolver el ambiente de trabajo y llegar a la segunda sesion con jupyter lab o visual studio code instalados en tu computadora. La sesion se imparte en un sistema operativo Linux, para los usuarios de windows asegurarse de llegar a la segunda sesion con la instalacion adecuada de Visual Studio Code y con la herramienta de WSL configurada para poder usar los comandos de terminal que se veran en el curso.</p>
+<li>ReLU (Rectified Linear Unit): f(x) = max(0, x). Es ampliamente utilizada por su simplicidad y eficiencia.</li>
+<li>Sigmoid: f(x) = 1 / (1 + e^(-x)). Produce valores entre 0 y 1, útil en tareas binarios.</li>
+<li>Tanh: f(x) = (e^x - e^(-x)) / (e^x + e^(-x)). Produce valores entre -1 y 1.</li>
+</ul></li>
+</ol>
+<p><img src="imagenes/artificial_nn.png" class="img-fluid" style="width:100.0%"></p>
 
 
 </section>
@@ -460,10 +434,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Objetivos Específicos</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Teoria-y-conceptos-basicos-de-redes-neuronales.html" class="pagination-link">
-        <span class="nav-page-text">Teoria y conceptos basicos de redes neuronales</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02-Teoria-y-conceptos-basicos-de-inteligencia-artificial-generativa.html" class="pagination-link">
+        <span class="nav-page-text">Teoria y conceptos basicos de inteligencia artificial generativa</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
